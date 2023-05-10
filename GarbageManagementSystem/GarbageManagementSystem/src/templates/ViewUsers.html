@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">Name</th>
+
+      <th scope="col">Place</th>
+      <th scope="col">Post</th>
+      <th scope="col">Pin</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+
+      <td>{{i['F_name']}} {{i['L_name']}}</td>
+
+      <td>{{i['Place']}}</td>
+      <td>{{i['Post']}}</td>
+      <td>{{i['Pin']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

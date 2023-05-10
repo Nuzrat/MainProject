@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="230" border="1">  " class="table table-hover"
+    <tr>
+
+      <th width="68" scope="col">Username</th>
+      <th width="51" scope="col">Product</th>
+        <th width="58" scope="col">Quantity</th>
+      <td></td>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['L_name']}}{{i['F_name']}}</td>
+
+      <td>&nbsp;{{i['Product']}}</td>
+      <td>&nbsp;{{i['Quality']}}</td>
+      <th width="25" rowspan="2" scope="col"><p><a href="#">Accept</a></p>
+      <p><a href="#">Reject</a></p></th>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

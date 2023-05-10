@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="AddProduct#posts">
+  <table width="262" border="1" class="table table-striped">
+    <tr>
+      <th width="70" scope="row">Product</th>
+      <td width="43"><strong>Type</strong></td>
+      <td width="51"><strong>Image</strong></td>
+      <td width="70">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['Product']}}</th>
+      <td>{{i['Type']}}</td>
+      <td><img src="../static/Product/{{i['Image']}}"width="80dp" height="80dp"> </td>
+      <td><p><a href="editProduct?id={{i['Product_id']}}#posts">Edit</a></p>
+      <p><a href="deleteProduct?id={{i['Product_id']}}#posts">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><input type="submit" name="Submit" value="Add new" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

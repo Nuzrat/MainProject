@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="AddDriver#posts">
+  <div align="center">
+    <table width="200" border="1" class="table table-striped">
+      <tr>
+         <th scope="col">&nbsp;</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Complaint</th>
+        <th scope="col">Date</th>
+        <th scope="col">Reply</th>
+
+      </tr>
+      {% for i in data %}
+      <tr>
+
+        <td>{{loop.index}}</td>
+        <td>{{i['F_name']}}{{i['L_name']}}</td>
+        <td>&nbsp;{{i['complaint']}}</td>
+        <td>&nbsp;{{i['date']}}</td>
+          {% if i['reply']=='pending'%}
+        <td><p><a href="sendreply?id={{i['id']}}#posts">reply</a></p>
+          {% else %}
+               <td>&nbsp;{{i['reply']}}</td>
+          {% endif %}
+
+
+      </tr>
+      {% endfor %}
+      <tr>
+
+      </table>  
+  </div>
+  <div align="center"></div>
+</form>
+</body>
+{% endblock %}

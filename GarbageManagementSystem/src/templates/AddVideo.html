@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form action="AddVideo1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1"> " class="table table-hover"
+    <tr>
+      <th scope="row">Video</th>
+      <td><input type="file" name="file" /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Add New" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

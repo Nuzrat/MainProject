@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addplace_post">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Latitude</th>
+      <td><input type="text" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Longitude</th>
+      <td><input type="text" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Add" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

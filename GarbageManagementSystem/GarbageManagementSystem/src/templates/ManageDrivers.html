@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="AddDriver#posts">
+  <div align="center">
+    <table width="200" border="1" class="table table-striped">
+      <tr>
+         <th scope="col">&nbsp;</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+
+        <td>{{loop.index}}</td>
+        <td>{{i['F_name']}}{{i['L_name']}}</td>
+
+        <td>{{i['Place']}},{{i['Post']}},{{i['Pin']}}</td>
+        <td>&nbsp;{{i['Phone']}}</td>
+        <td>&nbsp;{{i['Email_id']}}</td>
+        <td><p><a href="editDriver?id={{i['Driver_id']}}#posts"  class="btn btn-info">Edit</a></p>
+        <p><a href="delete_Driver?id={{i['login_id']}}#posts"  class="btn btn-danger">Delete</a></p></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td align="center" colspan="6"><label>
+          <div >
+            <input type="submit" name="Submit" value="Add new" class="btn btn-success"/>
+            </div>
+        </label></td>
+      </tr>
+      </table>  
+  </div>
+  <div align="center"></div>
+</form>
+</body>
+{% endblock %}

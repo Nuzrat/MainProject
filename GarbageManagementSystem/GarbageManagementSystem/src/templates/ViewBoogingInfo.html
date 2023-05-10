@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="230" border="1" class="table table-striped">
+    <tr>
+
+      <th>Username</th>
+      <th>Product</th>
+        <th>Quantity</th>
+      <th></th>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['F_name']}} {{i['L_name']}}</td>
+
+      <td>&nbsp;{{i['Product']}}</td>
+      <td>&nbsp;{{i['Quality']}}</td>
+      <td>{% if i['Status']=='pending'%}
+        <p><a href="Accept_booking?id={{i['Booking_id']}}" class="btn btn-info">Accept</a></p>
+      <p><a href="Reject_booking?id={{i['Booking_id']}}" class="btn btn-danger">Reject</a></p>
+
+
+         {% elif i['Status']=='Rejected'%}Rejected
+        {% else %}Accepted{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

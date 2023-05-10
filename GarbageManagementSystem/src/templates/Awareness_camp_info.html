@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="AwarenessCampAdd">
+  <table width="283" border="1"> " class="table table-hover"
+    <tr>
+      <th width="40" scope="col">Camp</th>
+      <th width="93" scope="col">Camp_details</th>
+      <th width="34" scope="col">Date</th>
+      <th width="88" scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['Camp']}}</td>
+      <td>&nbsp;{{i['Camp_details']}}</td>
+      <td>&nbsp;{{i['Date']}}</td>
+      <td><p><a href="editAwareness_camp_info?id={{i['Camp_id']}}">Edit</a></p>
+      <p><a href="deleteAwareness_camp_info?id={{i['Camp_id']}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add New" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

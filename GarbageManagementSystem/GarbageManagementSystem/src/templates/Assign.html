@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form2" name="form2" method="post" action="Assign1">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Place</th>
+      <td><label>
+        <select name="select">
+          {% for i in val %}
+          <option value="{{i['Place_id']}}"> {{i['Place']}}</option>
+          {% endfor %}
+        </select>
+        </label>      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Driver</th>
+      <td><label>
+        <select name="select2">
+          {% for j in val1 %}
+          <option value="{{j['login_id']}}"> {{j['F_name']}} {{j['L_name']}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Assign" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p>
+</body>
+{% endblock %}

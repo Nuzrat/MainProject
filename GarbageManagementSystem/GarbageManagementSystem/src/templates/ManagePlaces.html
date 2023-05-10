@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Place</th>
+      <td>Latitude</td>
+      <td>Longitude</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">&nbsp;{{i['Place']}}</th>
+      <td>&nbsp;{{i['Latitude']}}</td>
+      <td>&nbsp;{{i['Longitude']}}</td>
+      <td><p><a href="editPlace?id={{i['Place_id']}}#posts">Edit</a></p>
+      <p><a href="deletePlace?id={{i['Place_id']}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><a href="AddPlace#posts">Add</a></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

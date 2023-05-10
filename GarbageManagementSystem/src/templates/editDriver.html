@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="editdriver_post">
+  <table border="1">  " class="table table-hover"
+    <tr>
+      <th>First Name </th>
+      <td>
+        <input type="text" name="textfield" value="{{val['F_name']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Last name </th>
+      <td>
+        <input type="text" name="textfield2" value="{{val['L_name']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td>
+        <input type="text" name="textfield3" value="{{val['Place']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td>
+        <input type="text" name="textfield4" value="{{val['Post']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td>
+        <input type="text" name="textfield5" value="{{val['Pin']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td>
+        <input type="text" name="textfield6" value="{{val['Phone']}}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>
+        <input type="text" name="textfield7" value="{{val['Email_id']}}"/>
+      </td>
+    </tr>
+
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Update" /></th>
+    </tr>
+  </table>
+
+</form>
+</body>
+{% endblock %}

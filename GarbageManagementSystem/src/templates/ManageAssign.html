@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="Assign">
+  <div align="center">
+    <table width="200" border="1"> " class="table table-hover"
+      <tr>
+         <th scope="col">&nbsp#</th>
+        <th scope="col">Driver</th>
+        <th scope="col">Place</th>
+        <th scope="col">Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+
+        <td>{{loop.index}}</td>
+        <td>{{i['F_name']}}{{i['L_name']}}</td>
+
+        <td>{{i['Place']}}</td>
+        <td>&nbsp;{{i['Date']}}</td>
+        <td>&nbsp;{{i['Status']}}</td>
+
+        <td>
+        <p><a href="delete_Assign?id={{i['Assign_id']}}">Delete</a></p></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="5"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Add new" />
+            </div>
+        </label></td>
+      </tr>
+      </table>  
+  </div>
+  <div align="center"></div>
+</form>
+</body>
+{% endblock %}
